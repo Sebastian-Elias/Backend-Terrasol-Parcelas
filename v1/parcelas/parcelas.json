@@ -1,0 +1,113 @@
+{
+    "parcelas": [
+      {
+        "id": 1,
+        "tipo": "Residencial",
+        "lote": "A-12",
+        "servicios": {
+          "electricidad": true,
+          "agua potable": true,
+          "alcantarillado": false,
+          "internet": true
+        },
+        "propietario": "Juan Pérez"
+      },
+      {
+        "id": 2,
+        "tipo": "Comercial",
+        "lote": "B-5",
+        "servicios": {
+          "electricidad": true,
+          "agua potable": true,
+          "alcantarillado": true,
+          "internet": true
+        },
+        "propietario": "María González"
+      },
+      {
+        "id": 3,
+        "tipo": "Industrial",
+        "lote": "C-22",
+        "servicios": {
+          "electricidad": true,
+          "agua potable": false,
+          "alcantarillado": true,
+          "internet": true
+        },
+        "propietario": "Carlos Rodríguez"
+      },
+      {
+        "id": 4,
+        "tipo": "Residencial",
+        "lote": "D-8",
+        "servicios": {
+          "electricidad": true,
+          "agua potable": true,
+          "alcantarillado": true,
+          "internet": true
+        },
+        "propietario": "Ana Martínez"
+      },
+      {
+        "id": 5,
+        "tipo": "Comercial",
+        "lote": "E-15",
+        "servicios": {
+          "electricidad": true,
+          "agua potable": true,
+          "alcantarillado": true,
+          "internet": true
+        },
+        "propietario": "Pedro López"
+      },
+      {
+        "id": 6,
+        "tipo": "Residencial",
+        "lote": "F-4",
+        "servicios": {
+          "electricidad": true,
+          "agua potable": true,
+          "alcantarillado": true,
+          "internet": true
+        },
+        "propietario": "Luisa García"
+      },
+      {
+        "id": 7,
+        "tipo": "Industrial",
+        "lote": "G-10",
+        "servicios": {
+          "electricidad": true,
+          "agua potable": false,
+          "alcantarillado": false,
+          "internet": false
+        },
+        "propietario": "Javier Sánchez"
+      },
+      {
+        "id": 8,
+        "tipo": "Comercial",
+        "lote": "H-7",
+        "servicios": {
+          "electricidad": true,
+          "agua potable": true,
+          "alcantarillado": true,
+          "internet": true
+        },
+        "propietario": "Carmen Díaz"
+      },
+      {
+        "id": 9,
+        "tipo": "Residencial",
+        "lote": "I-19",
+        "servicios": {
+          "electricidad": true,
+          "agua potable": true,
+          "alcantarillado": true,
+          "internet": true
+        },
+        "propietario": "Ricardo Fernández"
+      }
+    ]
+  }
+  

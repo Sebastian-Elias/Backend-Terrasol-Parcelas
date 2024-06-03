@@ -1,0 +1,122 @@
+{
+    "terrenos": [
+      {
+        "id": 1,
+        "tipo": "Agrario",
+        "lote": "A-1",
+        "tamaño": "10 hectáreas",
+        "ubicacion": "Valle de Maipo",
+        "servicios": {
+          "agua": true,
+          "electricidad": false,
+          "alcantarillado": false
+        },
+        "propietario": "Juan Pérez"
+      },
+      {
+        "id": 2,
+        "tipo": "Forestal",
+        "lote": "B-5",
+        "tamaño": "50 hectáreas",
+        "ubicacion": "Bosque Araucaria",
+        "servicios": {
+          "agua": true,
+          "electricidad": false,
+          "alcantarillado": false
+        },
+        "propietario": "María González"
+      },
+      {
+        "id": 3,
+        "tipo": "Comercial",
+        "lote": "C-22",
+        "tamaño": "2 hectáreas",
+        "ubicacion": "Centro de la Ciudad",
+        "servicios": {
+          "agua": true,
+          "electricidad": true,
+          "alcantarillado": true
+        },
+        "propietario": "Carlos Rodríguez"
+      },
+      {
+        "id": 4,
+        "tipo": "Agrario",
+        "lote": "D-8",
+        "tamaño": "20 hectáreas",
+        "ubicacion": "Valle de Colchagua",
+        "servicios": {
+          "agua": true,
+          "electricidad": false,
+          "alcantarillado": false
+        },
+        "propietario": "Ana Martínez"
+      },
+      {
+        "id": 5,
+        "tipo": "Comercial",
+        "lote": "E-15",
+        "tamaño": "5 hectáreas",
+        "ubicacion": "Zona Industrial",
+        "servicios": {
+          "agua": true,
+          "electricidad": true,
+          "alcantarillado": true
+        },
+        "propietario": "Pedro López"
+      },
+      {
+        "id": 6,
+        "tipo": "Forestal",
+        "lote": "F-4",
+        "tamaño": "100 hectáreas",
+        "ubicacion": "Bosque de Pinos",
+        "servicios": {
+          "agua": true,
+          "electricidad": false,
+          "alcantarillado": false
+        },
+        "propietario": "Luisa García"
+      },
+      {
+        "id": 7,
+        "tipo": "Comercial",
+        "lote": "G-10",
+        "tamaño": "3 hectáreas",
+        "ubicacion": "Centro Comercial",
+        "servicios": {
+          "agua": true,
+          "electricidad": true,
+          "alcantarillado": true
+        },
+        "propietario": "Javier Sánchez"
+      },
+      {
+        "id": 8,
+        "tipo": "Agrario",
+        "lote": "H-7",
+        "tamaño": "30 hectáreas",
+        "ubicacion": "Valle de Casablanca",
+        "servicios": {
+          "agua": true,
+          "electricidad": false,
+          "alcantarillado": false
+        },
+        "propietario": "Carmen Díaz"
+      },
+      {
+        "id": 9,
+        "tipo": "Comercial",
+        "lote": "I-19",
+        "tamaño": "1 hectárea",
+        "ubicacion": "Playa",
+        "servicios": {
+          "agua": true,
+          "electricidad": true,
+          "alcantarillado": false
+        },
+        "propietario": "Ricardo Fernández"
+      }
+    ]
+  }
+  

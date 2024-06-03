@@ -1,0 +1,1163 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Sagger Terrasol Parcelas",
+        "description": "Este es un servidor de muestra de lo realizado en clases. Puede obtener más información sobre Swagger en [http://swagger.io](http://swagger.io) o en [irc.freenode.net, #swagger](http://swagger.io/irc/). <br><br>Para este ejemplo, puede utilizar las siguientes claves de API para métodos:<ul><li>Método GET - Authorization Bearer: `get`</li><li>Método POST - Authorization Bearer: `post`</li><li>Método PATCH - Authorization Bearer: `patch`</li><li>Método PUT - Authorization Bearer: `put`</li><li>Método DELETE - Authorization Bearer: `delete`</li></ul>.",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://localhost/Backend-Terrasol/v1/",
+            "description": "Class Server"
+        }
+    ],
+    "tags": [
+        {
+            "name": "About-us",
+            "description": "Información sobre la historia de la empresa",
+            "externalDocs": {
+                "description": "EVA",
+                "url": "http://eva.ciisa.cl"
+            }
+        },
+        {
+            "name": "casas",
+            "description": "Información sobre casas en venta"
+        },
+        {
+            "name": "parcelas",
+            "description": "Información sobre parcelas en venta"
+        },
+        {
+            "name": "terrenos",
+            "description": "Información sobre terrenos en venta"
+        }
+    ],
+    "paths": {
+        "/About-us/": {
+            "get": {
+                "tags": [
+                    "About-us"
+                ],
+                "summary": "Retorna todos los objetos",
+                "description": "Retorna un arreglo con información de la empresa, incluye: nombre de la empresa y descripción",
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/About-usResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Error: Sin Autorización"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuthGet": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "About-us"
+                ],
+                "summary": "Agregar nueva descripción de empresa",
+                "description": "Crea un objeto básico, incluye: id, nombre y activo",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/About-usCreate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Creación exitosa",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResultadoOk"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "Error: Conflicto",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ConflictoExiste"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Error: Sin Autorización"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuthPost": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "About-us"
+                ],
+                "summary": "Modifica los datos de un objeto",
+                "description": "Se puede sólo modificar el campo `descripción`",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/MantenedorUpdate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Actualización exitosa",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResultadoOk"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Error: Sin Autorización"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuthPut": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "About-us"
+                ],
+                "summary": "Eliminar un objeto",
+                "description": "Elimina un objeto básico, lo borra de la base de datos.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "ID del objeto",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Eliminación exitosa",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResultadoOk"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Error: Sin Autorización"
+                    },
+                    "404": {
+                        "description": "Error: No encontrado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ConflictoExiste"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Error: No implementado"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuthDelete": []
+                    }
+                ]
+            }
+        },
+        "/casas/": {
+            "get": {
+                "tags": [
+                    "casas"
+                ],
+                "summary": "Retorna todos los objetos",
+                "description": "Retorna un arreglo con información de la empresa, incluye: nombre de la empresa y descripción",
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/casasResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Error: Sin Autorización"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuthGet": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "casas"
+                ],
+                "summary": "Agregar nueva descripción de empresa",
+                "description": "Crea un objeto básico, incluye: id, nombre y activo",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/casasCreate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Creación exitosa",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResultadoOk"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "Error: Conflicto",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ConflictoExiste"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Error: Sin Autorización"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuthPost": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "casas"
+                ],
+                "summary": "Modifica los datos de un objeto",
+                "description": "Se puede sólo modificar el campo `descripción`",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/MantenedorUpdate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Actualización exitosa",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResultadoOk"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Error: Sin Autorización"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuthPut": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "casas"
+                ],
+                "summary": "Eliminar un objeto",
+                "description": "Elimina un objeto básico, lo borra de la base de datos.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "ID del objeto",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Eliminación exitosa",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResultadoOk"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Error: Sin Autorización"
+                    },
+                    "404": {
+                        "description": "Error: No encontrado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ConflictoExiste"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Error: No implementado"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuthDelete": []
+                    }
+                ]
+            }
+
+        },
+        "/parcelas/": {
+            "get": {
+                "tags": [
+                    "parcelas"
+                ],
+                "summary": "Retorna todos los objetos",
+                "description": "Retorna un arreglo con información de la empresa, incluye: nombre de la empresa y descripción",
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/parcelasResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Error: Sin Autorización"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuthGet": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "parcelas"
+                ],
+                "summary": "Agregar nueva descripción de empresa",
+                "description": "Crea un objeto básico, incluye: id, nombre y activo",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/parcelasCreate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Creación exitosa",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResultadoOk"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "Error: Conflicto",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ConflictoExiste"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Error: Sin Autorización"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuthPost": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "parcelas"
+                ],
+                "summary": "Modifica los datos de un objeto",
+                "description": "Se puede sólo modificar el campo `descripción`",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/MantenedorUpdate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Actualización exitosa",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResultadoOk"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Error: Sin Autorización"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuthPut": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "parcelas"
+                ],
+                "summary": "Eliminar un objeto",
+                "description": "Elimina un objeto básico, lo borra de la base de datos.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "ID del objeto",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Eliminación exitosa",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResultadoOk"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Error: Sin Autorización"
+                    },
+                    "404": {
+                        "description": "Error: No encontrado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ConflictoExiste"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Error: No implementado"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuthDelete": []
+                    }
+                ]
+            }
+
+        },
+        "/terrenos/": {
+            "get": {
+                "tags": [
+                    "terrenos"
+                ],
+                "summary": "Retorna todos los objetos",
+                "description": "Retorna un arreglo con información de la empresa, incluye: nombre de la empresa y descripción",
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/terrenosResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Error: Sin Autorización"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuthGet": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "terrenos"
+                ],
+                "summary": "Agregar nueva descripción de empresa",
+                "description": "Crea un objeto básico, incluye: id, nombre y activo",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/terrenosCreate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Creación exitosa",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResultadoOk"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "Error: Conflicto",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ConflictoExiste"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Error: Sin Autorización"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuthPost": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "terrenos"
+                ],
+                "summary": "Modifica los datos de un objeto",
+                "description": "Se puede sólo modificar el campo `descripción`",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/MantenedorUpdate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Actualización exitosa",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResultadoOk"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Error: Sin Autorización"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuthPut": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "terrenos"
+                ],
+                "summary": "Eliminar un objeto",
+                "description": "Elimina un objeto básico, lo borra de la base de datos.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "ID del objeto",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Eliminación exitosa",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResultadoOk"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Error: Sin Autorización"
+                    },
+                    "404": {
+                        "description": "Error: No encontrado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ConflictoExiste"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Error: No implementado"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuthDelete": []
+                    }
+                ]
+            }
+
+        }
+
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuthGet": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            },
+            "bearerAuthPost": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            },
+            "bearerAuthPatch": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            },
+            "bearerAuthPut": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            },
+            "bearerAuthDelete": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        },
+        "schemas": {
+            "ResultadoOk": {
+                "type": "object",
+                "properties": {
+                    "empresa": {
+                        "type": "string",
+                        "example": "Respuesta exitosa"
+                    }
+            },
+            "ConflictoExiste": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "boolean",
+                        "example": false
+                    }
+                }
+            }},
+            "About-usItem": {
+                "type": "object",
+                "properties": {
+                    "empresa": {
+                        "type": "string",
+                        "example": "Terrasol Parcelas",
+                        "description": "Nombre de la empresa"
+                    },
+                    "descripcion_completa": {
+                        "type": "string",
+                        "example": "Terrasol Parcelas emerge como un referente en el mercado inmobiliario de la zona centro sur de Chile, ofreciendo una oportunidad"
+                    }
+            }
+            },
+            "casasItem": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "number",
+                        "example": 1
+                    },
+                    "tipo": {
+                        "type": "string",
+                        "example": "Residencial"
+                    },
+                    "lote": {
+                        "type": "string",
+                        "example": "A-1"
+                    },
+                    "ubicacion": {
+                        "type": "string",
+                        "example": "Talca"
+                    },
+                    "tamaño_terreno": {
+                        "type": "string",
+                        "example": "1000 metros cuadrados"
+                    },
+                    "servicios": {
+                        "type": "object",
+                        "properties": {
+                            "electricidad": {
+                                "type": "boolean",
+                                "example": true
+                            },
+                            "agua_potable": {
+                                "type": "boolean",
+                                "example": true
+                            },
+                            "alcantarillado": {
+                                "type": "boolean",
+                                "example": true
+                            },
+                            "internet": {
+                                "type": "boolean",
+                                "example": true
+                            }
+                        }
+                    },
+                    "precio": {
+                        "type": "string",
+                        "example": "150 millones de pesos"
+                    },
+                    "propietario": {
+                        "type": "string",
+                        "example": "Juan Pérez"
+                    },
+                    "activo": {
+                        "type": "boolean",
+                        "example": true
+                    }
+                }
+            },
+            "parcelasItem": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "number",
+                            "example": 1
+                        },
+                        "tipo": {
+                            "type": "string",
+                            "example": "Residencial"
+                        },
+                        "lote": {
+                            "type": "string",
+                            "example": "A-1"
+                        },
+                        "ubicacion": {
+                            "type": "string",
+                            "example": "Talca"
+                        },
+                        "tamaño_terreno": {
+                            "type": "string",
+                            "example": "1000 metros cuadrados"
+                        },
+                        "descripcion_casa": {
+                            "type": "string",
+                            "example": "Casa de dos pisos con tres dormitorios y dos baños"
+                        },
+                        "servicios": {
+                            "type": "object",
+                            "properties": {
+                                "electricidad": {
+                                    "type": "boolean",
+                                    "example": true
+                                },
+                                "agua_potable": {
+                                    "type": "boolean",
+                                    "example": true
+                                },
+                                "alcantarillado": {
+                                    "type": "boolean",
+                                    "example": true
+                                },
+                                "internet": {
+                                    "type": "boolean",
+                                    "example": true
+                                }
+                            }
+                        },
+                        "precio": {
+                            "type": "string",
+                            "example": "150 millones de pesos"
+                        },
+                        "propietario": {
+                            "type": "string",
+                            "example": "Juan Pérez"
+                        },
+                        "activo": {
+                            "type": "boolean",
+                            "example": true
+                        }
+                    }
+                }
+            },
+            "terrenosItem": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "integer",
+                            "example": 1
+                        },
+                        "tipo": {
+                            "type": "string",
+                            "example": "Agrario"
+                        },
+                        "lote": {
+                            "type": "string",
+                            "example": "A-1"
+                        },
+                        "tamaño": {
+                            "type": "string",
+                            "example": "10 hectáreas"
+                        },
+                        "ubicacion": {
+                            "type": "string",
+                            "example": "Valle de Maipo"
+                        },
+                        "servicios": {
+                            "type": "object",
+                            "properties": {
+                                "agua": {
+                                    "type": "boolean",
+                                    "example": true
+                                },
+                                "electricidad": {
+                                    "type": "boolean",
+                                    "example": false
+                                },
+                                "alcantarillado": {
+                                    "type": "boolean",
+                                    "example": false
+                                }
+                            }
+                        },
+                        "propietario": {
+                            "type": "string",
+                            "example": "Juan Pérez"
+                        }
+                    }
+                }
+            },
+            "MantenedorUpdate": {
+                "type": "object",
+                "properties": {
+                    "mantenedor": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer",
+                                "example": 13
+                            },
+                            "nombre": {
+                                "type": "string",
+                                "example": "Desarrollo Backend"
+                            }
+                        }
+                    }
+                },
+                "required": [
+                    "mantenedor"
+                ]
+            },
+            "About-usResponse": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/About-usItem"
+                        }
+                    }
+                }
+            },
+            "casasResponse": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/casasItem"
+                        }
+                    }
+                }
+            },
+            "parcelasResponse": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/parcelasItem"
+                        }
+                    }
+                }
+            },
+            "terrenosResponse": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/terrenosItem"
+                        }
+                    }
+                }
+            },
+            "About-usCreate": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "example": 13
+                    },
+                    "nombre": {
+                        "type": "string",
+                        "example": "Desarrollo Backend"
+                    }
+                }
+            },
+            "casasCreate": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "example": 13
+                    },
+                    "nombre": {
+                        "type": "string",
+                        "example": "Desarrollo Backend"
+                    },
+                    "tipo": {
+                        "type": "string",
+                        "example": "Residencial"
+                    },
+                    "lote": {
+                        "type": "string",
+                        "example": "A-1"
+                    },
+                    "ubicacion": {
+                        "type": "string",
+                        "example": "Talca"
+                    },
+                    "tamaño_terreno": {
+                        "type": "string",
+                        "example": "1000 metros cuadrados"
+                    },
+                    "servicios": {
+                        "type": "object",
+                        "properties": {
+                            "electricidad": {
+                                "type": "boolean",
+                                "example": true
+                            },
+                            "agua_potable": {
+                                "type": "boolean",
+                                "example": true
+                            },
+                            "alcantarillado": {
+                                "type": "boolean",
+                                "example": true
+                            },
+                            "internet": {
+                                "type": "boolean",
+                                "example": true
+                            }
+                        }
+                    },
+                    "precio": {
+                        "type": "string",
+                        "example": "150 millones de pesos"
+                    },
+                    "propietario": {
+                        "type": "string",
+                        "example": "Juan Pérez"
+                    },
+                    "activo": {
+                        "type": "boolean",
+                        "example": true
+                    }
+                }
+            },
+            "terrenosCreate": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "tipo": {
+                        "type": "string",
+                        "example": "Agrario"
+                    },
+                    "lote": {
+                        "type": "string",
+                        "example": "A-1"
+                    },
+                    "tamaño": {
+                        "type": "string",
+                        "example": "10 hectáreas"
+                    },
+                    "ubicacion": {
+                        "type": "string",
+                        "example": "Valle de Maipo"
+                    },
+                    "servicios": {
+                        "type": "object",
+                        "properties": {
+                            "agua": {
+                                "type": "boolean",
+                                "example": true
+                            },
+                            "electricidad": {
+                                "type": "boolean",
+                                "example": false
+                            },
+                            "alcantarillado": {
+                                "type": "boolean",
+                                "example": false
+                            }
+                        }
+                    },
+                    "propietario": {
+                        "type": "string",
+                        "example": "Juan Pérez"
+                    }
+                }
+            },
+            "parcelasCreate": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "integer",
+                            "example": 1
+                        },
+                        "tipo": {
+                            "type": "string",
+                            "example": "Residencial"
+                        },
+                        "lote": {
+                            "type": "string",
+                            "example": "A-12"
+                        },
+                        "servicios": {
+                            "type": "object",
+                            "properties": {
+                                "electricidad": {
+                                    "type": "boolean",
+                                    "example": true
+                                },
+                                "agua_potable": {
+                                    "type": "boolean",
+                                    "example": true
+                                },
+                                "alcantarillado": {
+                                    "type": "boolean",
+                                    "example": false
+                                },
+                                "internet": {
+                                    "type": "boolean",
+                                    "example": true
+                                }
+                            }
+                        },
+                        "propietario": {
+                            "type": "string",
+                            "example": "Juan Pérez"
+                        }
+                    }
+                }
+            }
+            
+        },
+    "security": [
+        {
+            "bearerAuthGet": []
+        }
+    ]
+
+}

@@ -1,0 +1,158 @@
+{
+    "parcelas_con_casas": [
+        {
+            "id": 1,
+            "tipo": "Residencial",
+            "lote": "A-1",
+            "ubicacion": "Talca",
+            "tama\u00f1o_terreno": "1000 metros cuadrados",
+            "descripcion_casa": "Casa de dos pisos con tres dormitorios y dos ba\u00f1os",
+            "servicios": {
+                "electricidad": true,
+                "agua potable": true,
+                "alcantarillado": true,
+                "internet": true
+            },
+            "precio": "150 millones de pesos",
+            "propietario": "Juan P\u00e9rez",
+            "activo": true
+        },
+        {
+            "id": 2,
+            "tipo": "Residencial",
+            "lote": "B-5",
+            "ubicacion": "Concepci\u00f3n",
+            "tama\u00f1o_terreno": "800 metros cuadrados",
+            "descripcion_casa": "Casa moderna de un piso con cuatro dormitorios y tres ba\u00f1os",
+            "servicios": {
+                "electricidad": true,
+                "agua potable": true,
+                "alcantarillado": true,
+                "internet": true
+            },
+            "precio": "200 millones de pesos",
+            "propietario": "Mar\u00eda Gonz\u00e1lez",
+            "activo": true
+        },
+        {
+            "id": 3,
+            "tipo": "Residencial",
+            "lote": "C-22",
+            "ubicacion": "Valdivia",
+            "tama\u00f1o_terreno": "1200 metros cuadrados",
+            "descripcion_casa": "Casa estilo campestre con amplios jardines y vista al r\u00edo",
+            "servicios": {
+                "electricidad": true,
+                "agua potable": true,
+                "alcantarillado": true,
+                "internet": true
+            },
+            "precio": "300 millones de pesos",
+            "propietario": "Carlos Rodr\u00edguez",
+            "activo": true
+        },
+        {
+            "id": 4,
+            "tipo": "Residencial",
+            "lote": "D-8",
+            "ubicacion": "Valdivia",
+            "tama\u00f1o_terreno": "1500 metros cuadrados",
+            "descripcion_casa": "Casa de dise\u00f1o contempor\u00e1neo con piscina y vistas panor\u00e1micas al lago",
+            "servicios": {
+                "electricidad": true,
+                "agua potable": true,
+                "alcantarillado": true,
+                "internet": true
+            },
+            "precio": "400 millones de pesos",
+            "propietario": "Ana Mart\u00ednez",
+            "activo": true
+        },
+        {
+            "id": 5,
+            "tipo": "Residencial",
+            "lote": "E-15",
+            "ubicacion": "Osorno",
+            "tama\u00f1o_terreno": "900 metros cuadrados",
+            "descripcion_casa": "Casa de estilo colonial con amplio patio y \u00e1rboles frutales",
+            "servicios": {
+                "electricidad": true,
+                "agua potable": true,
+                "alcantarillado": true,
+                "internet": true
+            },
+            "precio": "250 millones de pesos",
+            "propietario": "Pedro L\u00f3pez",
+            "activo": true
+        },
+        {
+            "id": 6,
+            "tipo": "Residencial",
+            "lote": "F-4",
+            "ubicacion": "Puerto Montt",
+            "tama\u00f1o_terreno": "1100 metros cuadrados",
+            "descripcion_casa": "Casa de estilo r\u00fastico con vista al mar y acceso privado a la playa",
+            "servicios": {
+                "electricidad": true,
+                "agua potable": true,
+                "alcantarillado": true,
+                "internet": true
+            },
+            "precio": "350 millones de pesos",
+            "propietario": "Luisa Garc\u00eda",
+            "activo": true
+        },
+        {
+            "id": 7,
+            "tipo": "Residencial",
+            "lote": "G-10",
+            "ubicacion": "Puerto Varas",
+            "tama\u00f1o_terreno": "950 metros cuadrados",
+            "descripcion_casa": "Casa de estilo moderno con grandes ventanales y vista a los volcanes",
+            "servicios": {
+                "electricidad": true,
+                "agua potable": true,
+                "alcantarillado": true,
+                "internet": true
+            },
+            "precio": "380 millones de pesos",
+            "propietario": "Javier S\u00e1nchez",
+            "activo": true
+        },
+        {
+            "id": 8,
+            "tipo": "Residencial",
+            "lote": "H-7",
+            "ubicacion": "Valdivia",
+            "tama\u00f1o_terreno": "1000 metros cuadrados",
+            "descripcion_casa": "Casa de estilo contempor\u00e1neo con piscina climatizada y jard\u00edn tropical",
+            "servicios": {
+                "electricidad": true,
+                "agua potable": true,
+                "alcantarillado": true,
+                "internet": true
+            },
+            "precio": "420 millones de pesos",
+            "propietario": "Carmen D\u00edaz",
+            "activo": true
+        },
+        {
+            "id": 9,
+            "tipo": "Residencial",
+            "lote": "I-19",
+            "ubicacion": "Puerto Montt",
+            "tama\u00f1o_terreno": "800 metros cuadrados",
+            "descripcion_casa": "Casa de dise\u00f1o minimalista con amplios espacios y luz natural",
+            "servicios": {
+                "electricidad": true,
+                "agua potable": true,
+                "alcantarillado": true,
+                "internet": true
+            },
+            "precio": "300 millones de pesos",
+            "propietario": "Ricardo Fern\u00e1ndez",
+            "activo": true
+        }
+    ],
+    "0": null
+}
